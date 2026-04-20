@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-purple-900: #581c87;
+
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui;
+
+  --shadow-soft: 0 10px 25px -5px rgba(147, 51, 234, 0.1), 0 8px 10px -6px rgba(147, 51, 234, 0.1);
+  --shadow-bouncy: 0 20px 25px -5px rgba(147, 51, 234, 0.2);
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  --animate-bounce-subtle: bounce-subtle 2s infinite ease-in-out;
+}
+
+:root {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-purple-50 text-purple-900;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.card-purple {
+  @apply bg-white rounded-3xl shadow-soft border border-purple-100 transition-all duration-300 hover:shadow-bouncy hover:-translate-y-1;
+}
+
+.btn-primary {
+  @apply bg-purple-600 text-white px-6 py-3 rounded-3xl font-bold shadow-soft transition-all duration-300 hover:bg-purple-700 active:scale-95;
+}
